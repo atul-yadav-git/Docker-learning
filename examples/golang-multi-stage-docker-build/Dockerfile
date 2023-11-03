@@ -16,6 +16,7 @@ RUN CGO_ENABLED=0 go build -o /app .
 # HERE STARTS THE MAGIC OF MULTI STAGE BUILD
 ############################################
 
+#scratch is the most minimalistic distroless image right now, doesnt have have runtime env
 FROM scratch
 
 # Copy the compiled binary from the build stage
